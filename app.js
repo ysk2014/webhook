@@ -12,9 +12,18 @@ function main(req, res, data) {
             commit_message = data.commits[0].short_message;
 
         var exec = childProcess.exec;
+        console.log(project_name);
 
-        exec('cd ../'+project_name+' && git pull origin master && pm2 restart movie', function(err, stdout, stderr) {
+        var workerProcess = exec('git pull origin master && pm2 restart 1', {
+            cwd: '../'+project_name
+        }, function(err, stdout, stderr) {
+            console.log('stdout: ' + stdout);
+            console.log('stderr: ' + stderr);
+            workerProcess.kill();
             res.end();
+        });
+        workerProcess.on('exit', function (code) {
+            console.log('子进程已退出，退出码 '+code);
         });
     } else {
         res.end();
