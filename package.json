@@ -1,0 +1,23 @@
+{
+  "name": "webhook",
+  "version": "1.0.0",
+  "description": "监听github更新",
+  "main": "app.js",
+  "dependencies": {
+    "child_process": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ysk2014/webhook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ysk2014/webhook/issues"
+  },
+  "homepage": "https://github.com/ysk2014/webhook#readme"
+}
