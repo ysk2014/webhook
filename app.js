@@ -4,11 +4,8 @@ var http = require('http');
 var childProcess = require('child_process');
 
 function main(req, res, data) {
-    if (data.commits) {
+    if (data.ref == 'refs/heads/master' && data.commits) {
         var project_name = data.repository.name;
-        console.log(data);
-        console.log(data.repository);
-        console.log(data.commits);
 
         var exec = childProcess.exec;
         console.log(project_name);
