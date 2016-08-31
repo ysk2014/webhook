@@ -13,7 +13,7 @@ function main(req, res, data) {
 
         var exec = childProcess.exec;
 
-        exec('cd ./'+project_name+' && git pull origin master', function(err, stdout, stderr) {
+        exec('cd ./'+project_name+' && git pull origin master && pm2 restart movie', function(err, stdout, stderr) {
             res.end();
         });
     } else {
