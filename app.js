@@ -5,11 +5,7 @@ var childProcess = require('child_process');
 
 function main(req, res, data) {
     if (data.commits) {
-        var project_name = data.repository.name,
-            trigger_user = data.user.global_key,
-            commit_user = data.commits[0].committer.name,
-            commit_user_email = data.commits[0].committer.email,
-            commit_message = data.commits[0].short_message;
+        var project_name = data.repository.name;
 
         var exec = childProcess.exec;
         console.log(project_name);
