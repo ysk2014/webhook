@@ -10,7 +10,7 @@ function main(req, res, data) {
         var exec = childProcess.exec;
         console.log(project_name);
 
-        var workerProcess = exec('git pull origin master && pm2 restart 1', {
+        var workerProcess = exec('git pull origin master && pm2 restart 2', {
             cwd: '../'+project_name
         }, function(err, stdout, stderr) {
             console.log('stdout: ' + stdout);
