@@ -10,7 +10,13 @@ function main(req, res, data) {
         var exec = childProcess.exec;
         console.log(project_name);
 
-        var workerProcess = exec('git pull origin master && pm2 restart 2', {
+        if (project_name == 'webhook') {
+            var shell = 'git pull origin master && pm2 restart 2';
+        } else {
+            var shell = 'git pull origin master && pm2 restart 1';
+        }
+
+        var workerProcess = exec(shell, {
             cwd: '../'+project_name
         }, function(err, stdout, stderr) {
             console.log('stdout: ' + stdout);
