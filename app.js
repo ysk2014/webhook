@@ -11,7 +11,7 @@ function main(req, res, data) {
         console.log(project_name);
 
         if (project_name == 'webhook') {
-            var shell = 'git pull origin master && pm2 restart 2';
+            var shell = 'git pull origin master && pm2 restart 0';
         } else {
             var shell = 'git pull origin master && pm2 restart 1';
         }
